@@ -47,29 +47,7 @@ namespace AutoTest1.HomeWork
 
             driver.Quit();
         }
-        /* [Test]
-         public static void FirefoxVersionTest() // Tikrinimas su Firefox;
-         {
-             IWebDriver driver = new FirefoxDriver();
-             driver.Url = "https://developers.whatismybrowser.com/useragents/parse/?analyse-my-user-agent=yes#parse-useragent";
-             driver.Manage().Window.Maximize();
-
-             IWebElement listUl = driver.FindElement(By.CssSelector(".block-software > ul:nth-child(2)"));
-             IReadOnlyCollection<IWebElement> list = listUl.FindElements(By.ClassName("value"));
-
-             int i = 0;
-
-             foreach (IWebElement li in list)
-             {
-                 i++;
-                 if (i == 1)
-                     if (li.Text == "Firefox 97")
-                         break;
-                     else
-                         Assert.Fail("Wrong browser");
-
-             }
-             driver.Quit();*/
+        
     }
 }
 
