@@ -191,6 +191,8 @@ namespace AutoTest1.Misc
                 Assert.IsTrue(book.Text.Contains("Yra pakankama") || book.Text.Contains("Liko nedaug"), "Book can't be bought in all the bookstores");
 
             }
+
+            /*******************/
         }
     }
 }
