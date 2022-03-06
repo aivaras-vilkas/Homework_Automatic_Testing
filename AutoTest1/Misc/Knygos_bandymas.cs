@@ -28,7 +28,7 @@ namespace AutoTest1.Misc
         [OneTimeTearDown]
         public static void OneTimeTearDown()
         {
-            //driver.Quit();
+            driver.Quit();
         }
 
         [Test]
@@ -182,7 +182,15 @@ namespace AutoTest1.Misc
             IWebElement Book1 = driver.FindElement(By.CssSelector("#homepage > div.container > div.row.categories > div.col-12.col-lg-9.products-holder-wrapper > div:nth-child(4) > div > section > div:nth-child(1)"));
             Book1.Click();
 
+            IWebElement ShopList = driver.FindElement(By.CssSelector("#type-new-block > div.features.d-none.d-xl-block.mb-4 > ul.shop-location-wrapper.product-page"));
 
+            IReadOnlyCollection<IWebElement> list = ShopList.FindElements(By.ClassName("in-store-statuses-text"));
+
+            foreach (IWebElement book in list) //checkinam ar sia knyga galima rasti visose parduotuvese
+            {
+                Assert.IsTrue(book.Text.Contains("Yra pakankama") || book.Text.Contains("Liko nedaug"), "Book can't be bought in all the bookstores");
+
+            }
         }
     }
 }
